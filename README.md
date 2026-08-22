@@ -18,6 +18,6 @@ Input image (```coffee_512x512.png```):
 
 ![A colorful image of a turtle enjoying a hot cup of coffee.](./coffee_512x512.png)
 
-Output image(```coffee_512x512_dither_64.png```):
+Output image (```coffee_512x512_dither_64.png```):
 
 ![A black and white dithered version of the original input image of a turtle enjoying a hot cup of coffee.](./coffee_512x512_dither_64.png)
