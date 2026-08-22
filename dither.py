@@ -3,7 +3,7 @@ from PIL import Image
 
 
 def create_map(d):
-        # build matrix based on dither level (2, 4, or 16)
+        # build matrix based on dimension (2 x 2, 4 x 4, or 8 x 8)
         if d == 2:
                 m = [0, 2, 3, 1]
         elif d == 4:
@@ -19,13 +19,12 @@ def create_map(d):
         return m
 
 
-def get_matrix_index(x, y, area):
-        r = y % area
-        c = x % area
-        return ((r * area) + c)
+def get_matrix_index(x, y, dim):
+        r = y % dim
+        c = x % dim
+        return ((r * dim) + c)
 
 
-selection = 0
 dimension = 0
 inset = {4, 16, 64}
 
@@ -42,13 +41,10 @@ if len(sys.argv) > 2:
         z = int(sys.argv[2])
         if z in inset:
                 if z == 4:
-                        #selection = 0
                         dimension = 2
                 elif z == 16:
-                        #selection = 1
                         dimension = 4
                 else:
-                        #selection = 2
                         dimension = 8
         else:
                 print("Valid args are: 4, 16, and 64. Default to 64.")
